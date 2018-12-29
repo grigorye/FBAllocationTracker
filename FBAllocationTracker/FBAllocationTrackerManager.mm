@@ -66,7 +66,7 @@ BOOL FBIsFBATEnabledInThisBuild(void)
 
 - (void)enableGenerations
 {
-  dispatch_async(_queue, ^{
+  dispatch_sync(_queue, ^{
     if (self->_generationsClients == 0) {
       FB::AllocationTracker::enableGenerations();
       FB::AllocationTracker::markGeneration();
@@ -77,7 +77,7 @@ BOOL FBIsFBATEnabledInThisBuild(void)
 
 - (void)disableGenerations
 {
-  dispatch_async(_queue, ^{
+  dispatch_sync(_queue, ^{
     self->_generationsClients -= 1;
     if (self->_generationsClients <= 0) {
       FB::AllocationTracker::disableGenerations();
