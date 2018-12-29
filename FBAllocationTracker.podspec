@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FBAllocationTracker"
-  s.version      = "0.1.6-pre"
+  s.version      = "0.1.6"
   s.summary      = "Interface for tracking allocations and generations of objects"
   s.homepage     = "https://github.com/facebook/FBAllocationTracker"
   s.license      = "BSD"
